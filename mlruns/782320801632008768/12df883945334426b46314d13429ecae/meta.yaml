@@ -1,0 +1,14 @@
+artifact_uri: file:///content/drive/MyDrive/EMIPredict_AI/mlruns/782320801632008768/12df883945334426b46314d13429ecae/artifacts
+end_time: 1766644520359
+entry_point_name: ''
+experiment_id: '782320801632008768'
+lifecycle_stage: active
+run_id: 12df883945334426b46314d13429ecae
+run_name: Linear_Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766644514554
+status: 3
+tags: []
+user_id: root

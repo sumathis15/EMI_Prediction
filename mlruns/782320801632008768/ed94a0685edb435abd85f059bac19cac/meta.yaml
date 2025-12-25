@@ -1,0 +1,14 @@
+artifact_uri: file:///content/drive/MyDrive/EMIPredict_AI/mlruns/782320801632008768/ed94a0685edb435abd85f059bac19cac/artifacts
+end_time: 1766644736734
+entry_point_name: ''
+experiment_id: '782320801632008768'
+lifecycle_stage: active
+run_id: ed94a0685edb435abd85f059bac19cac
+run_name: XGBoost_Regressor
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766644715068
+status: 3
+tags: []
+user_id: root

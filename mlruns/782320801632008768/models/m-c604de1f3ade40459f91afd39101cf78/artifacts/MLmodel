@@ -1,0 +1,22 @@
+artifact_path: file:///content/drive/MyDrive/EMIPredict_AI/mlruns/782320801632008768/models/m-c604de1f3ade40459f91afd39101cf78/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.12
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+mlflow_version: 3.8.0
+model_id: m-c604de1f3ade40459f91afd39101cf78
+model_size_bytes: 2900
+model_uuid: m-c604de1f3ade40459f91afd39101cf78
+prompts: null
+run_id: 9b07daab1f274fbc8fc46c3ff5209086
+utc_time_created: '2025-12-25 06:32:04.636892'

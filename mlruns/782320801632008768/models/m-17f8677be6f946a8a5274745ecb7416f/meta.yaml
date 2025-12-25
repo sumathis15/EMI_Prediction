@@ -1,0 +1,10 @@
+artifact_location: file:///content/drive/MyDrive/EMIPredict_AI/mlruns/782320801632008768/models/m-17f8677be6f946a8a5274745ecb7416f/artifacts
+creation_timestamp: 1766644445196
+experiment_id: '782320801632008768'
+last_updated_timestamp: 1766644493452
+model_id: m-17f8677be6f946a8a5274745ecb7416f
+model_type: null
+name: model
+source_run_id: 259744afe58f41ee9739b0fa8647ad84
+status: 2
+status_message: null

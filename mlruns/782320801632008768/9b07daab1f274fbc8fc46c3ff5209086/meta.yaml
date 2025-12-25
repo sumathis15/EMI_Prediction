@@ -1,0 +1,14 @@
+artifact_uri: file:///content/drive/MyDrive/EMIPredict_AI/mlruns/782320801632008768/9b07daab1f274fbc8fc46c3ff5209086/artifacts
+end_time: 1766644432256
+entry_point_name: ''
+experiment_id: '782320801632008768'
+lifecycle_stage: active
+run_id: 9b07daab1f274fbc8fc46c3ff5209086
+run_name: Logistic_Regression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766644323015
+status: 3
+tags: []
+user_id: root

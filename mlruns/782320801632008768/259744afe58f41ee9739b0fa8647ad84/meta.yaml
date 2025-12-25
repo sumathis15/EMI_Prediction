@@ -1,0 +1,14 @@
+artifact_uri: file:///content/drive/MyDrive/EMIPredict_AI/mlruns/782320801632008768/259744afe58f41ee9739b0fa8647ad84/artifacts
+end_time: 1766644493714
+entry_point_name: ''
+experiment_id: '782320801632008768'
+lifecycle_stage: active
+run_id: 259744afe58f41ee9739b0fa8647ad84
+run_name: Random_Forest_Classifier
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766644432278
+status: 3
+tags: []
+user_id: root

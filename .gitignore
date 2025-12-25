@@ -205,3 +205,10 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Large data files (too big for GitHub)
+data/emi_prediction_dataset.csv
+
+# Large MLflow model artifacts (too big for GitHub)
+mlruns/**/models/**/artifacts/*.pkl
+mlruns/**/models/**/artifacts/model.pkl
