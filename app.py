@@ -462,8 +462,7 @@ nav_items = [
     ("📊", "EMI Eligibility Checker"),
     ("💰", "Max EMI Predictor"),
     ("📉", "Data Exploration"),
-    ("🔬", "MLflow Dashboard"),
-    ("⚙️", "Admin Panel")
+    ("🔬", "MLflow Dashboard")
 ]
 
 # Create styled navigation buttons
@@ -1447,114 +1446,5 @@ elif page == "MLflow Dashboard":
                 <p>Make sure your mlruns folder is in the project root directory.</p>
             </div>
             """, unsafe_allow_html=True)
-
-# =====================================================
-# ⚙️ ADMIN PANEL
-# =====================================================
-elif page == "Admin Panel":
-    st.title("⚙️ Admin Panel")
-    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-    
-    admin_tabs = st.tabs(["📊 Data Management", "🤖 Model Management", "📈 System Monitoring"])
-    
-    with admin_tabs[0]:
-        st.markdown("### 📊 Data Management")
-        
-        st.markdown("#### Upload Dataset")
-        uploaded_data = st.file_uploader("Upload new dataset", type=['csv'], key="admin_upload")
-        
-        if uploaded_data is not None:
-            try:
-                df_admin = pd.read_csv(uploaded_data, low_memory=False)
-                st.success(f"✅ Dataset uploaded: {df_admin.shape[0]:,} rows × {df_admin.shape[1]} columns")
-                
-                col1, col2 = st.columns(2)
-                with col1:
-                    st.markdown("**Dataset Info**")
-                    st.json({
-                        "Rows": int(df_admin.shape[0]),
-                        "Columns": int(df_admin.shape[1]),
-                        "Memory Usage": f"{df_admin.memory_usage(deep=True).sum() / 1024**2:.2f} MB",
-                        "Missing Values": int(df_admin.isnull().sum().sum())
-                    })
-                
-                with col2:
-                    st.markdown("**Data Quality Check**")
-                    quality_checks = {
-                        "Duplicate Rows": df_admin.duplicated().sum(),
-                        "Empty Rows": df_admin.isnull().all(axis=1).sum(),
-                        "Complete Rows": df_admin.notna().all(axis=1).sum()
-                    }
-                    st.json(quality_checks)
-                
-                if st.button("💾 Save Dataset", use_container_width=True):
-                    save_path = st.text_input("Save path", value="data/dataset.csv")
-                    os.makedirs(os.path.dirname(save_path), exist_ok=True)
-                    df_admin.to_csv(save_path, index=False)
-                    st.success(f"✅ Dataset saved to {save_path}")
-            except Exception as e:
-                st.error(f"Error processing dataset: {str(e)}")
-        
-        st.markdown("#### Dataset Statistics")
-        if os.path.exists("data/dataset.csv"):
-            df_stats = pd.read_csv("data/dataset.csv", nrows=1000)  # Sample for stats
-            st.dataframe(df_stats.describe(), use_container_width=True)
-        else:
-            st.info("No dataset file found. Upload a dataset to view statistics.")
-    
-    with admin_tabs[1]:
-        st.markdown("### 🤖 Model Management")
-        
-        st.markdown("#### Current Models")
-        model_files = {
-            "Classifier": "models/xgboost_clf.pkl",
-            "Regressor": "models/xgboost_reg.pkl",
-            "Feature Columns": "models/feature_columns.pkl"
-        }
-        
-        for model_name, model_path in model_files.items():
-            col1, col2, col3 = st.columns([2, 1, 1])
-            with col1:
-                st.write(f"**{model_name}**")
-            with col2:
-                if os.path.exists(model_path):
-                    file_size = os.path.getsize(model_path) / (1024 * 1024)  # MB
-                    st.write(f"✅ {file_size:.2f} MB")
-                else:
-                    st.write("❌ Not found")
-            with col3:
-                if os.path.exists(model_path):
-                    mod_time = os.path.getmtime(model_path)
-                    from datetime import datetime
-                    st.write(datetime.fromtimestamp(mod_time).strftime("%Y-%m-%d"))
-        
-        st.markdown("#### Model Operations")
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            if st.button("🔄 Reload Models", use_container_width=True):
-                st.cache_resource.clear()
-                st.success("✅ Models cache cleared. Refresh the page to reload.")
-        
-        with col2:
-            if st.button("📥 Download Models", use_container_width=True):
-                st.info("Model download feature - implement as needed")
-    
-    with admin_tabs[2]:
-        st.markdown("### 📈 System Monitoring")
-        
-        col1, col2, col3, col4 = st.columns(4)
-        
-        with col1:
-            st.metric("Active Models", "2")
-        with col2:
-            st.metric("Total Predictions", "N/A")
-        with col3:
-            st.metric("System Status", "🟢 Online")
-        with col4:
-            st.metric("Uptime", "99.9%")
-        
-        st.markdown("#### System Logs")
-        st.info("System monitoring and logging features can be implemented here")
 
 # =====================================================

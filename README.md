@@ -9,7 +9,6 @@ An AI-powered Streamlit application for making data-driven lending decisions thr
 - **Data Exploration**: Interactive visualizations and analysis of financial data
 - **MLflow Dashboard**: Track and compare all ML model experiments
 - **System Overview**: Comprehensive model performance metrics and details
-- **Admin Panel**: Data and model management interface
 
 ## 🛠️ Technology Stack
 
@@ -49,6 +48,11 @@ An AI-powered Streamlit application for making data-driven lending decisions thr
    streamlit run app.py
    ```
 
+**Note**: The Data Exploration page requires the dataset file (`data/emi_prediction_dataset.csv`) which is not included in the GitHub repository due to its large size (71.93 MB). If you want to use the Data Exploration feature, you'll need to:
+- Download the dataset separately
+- Place it in the `data/` directory
+- The app will automatically load it when you navigate to the Data Exploration page
+
 ## 🌐 Deployment on Streamlit Cloud
 
 ### Step 1: Prepare Your Repository
@@ -87,7 +91,7 @@ An AI-powered Streamlit application for making data-driven lending decisions thr
 - ✅ Models load successfully
 - ✅ Predictions work
 - ✅ MLflow dashboard displays
-- ✅ Data exploration works
+- ⚠️ **Note**: Data Exploration page may not work on Streamlit Cloud due to the large CSV file size (71.93 MB). To use the Data Exploration feature, please clone the repository and run the app locally.
 
 ## 📁 Project Structure
 
